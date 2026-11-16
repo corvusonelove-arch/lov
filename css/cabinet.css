@@ -1,0 +1,136 @@
+/* ============================================================
+   Кабинет: ответ гостя, ссылки, список приглашений
+   ============================================================ */
+
+.cab-main { padding: 34px 0 70px; }
+
+.cab-hero {
+  position: relative; overflow: hidden; border-radius: 30px; color: #fff;
+  padding: 34px 34px 30px; box-shadow: var(--shadow-lg);
+  background: var(--cab-grad, var(--grad-brand));
+  margin-bottom: 26px;
+}
+.cab-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(120% 90% at 90% 0%, rgba(255,255,255,.25), transparent 55%);
+  pointer-events: none;
+}
+.cab-hero-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.cab-status {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 800;
+  letter-spacing: .04em; text-transform: uppercase; padding: 7px 14px; border-radius: 100px;
+  background: rgba(255, 255, 255, .22); border: 1px solid rgba(255, 255, 255, .35);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.cab-status .dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.25); }
+.cab-status.wait .dot { animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+.cab-hero h1 {
+  font-size: clamp(24px, 3.6vw, 38px); margin: 18px 0 8px; position: relative; z-index: 1;
+  text-wrap: balance;
+}
+.cab-hero .cab-sub { font-size: 15px; opacity: .9; position: relative; z-index: 1; margin: 0; }
+.cab-hero-emoji { position: absolute; right: -10px; bottom: -18px; font-size: 120px; opacity: .18; z-index: 0; line-height: 1; }
+
+.cab-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 22px; align-items: start; }
+@media (max-width: 880px) { .cab-grid { grid-template-columns: 1fr; } }
+
+.cab-card { padding: 28px; }
+.cab-card h2 { font-size: 20px; margin-bottom: 16px; }
+.cab-card h3 { font-size: 16px; }
+
+.answer-big { display: flex; flex-direction: column; gap: 6px; }
+.answer-yes {
+  font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); line-height: 1.1;
+  color: var(--coral); display: flex; align-items: center; gap: 12px;
+}
+.answer-plan { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.answer-plan span {
+  display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px;
+  background: var(--cream-2); border-radius: 100px; padding: 10px 16px;
+}
+.answer-meta {
+  margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--line-strong);
+  display: grid; gap: 8px; font-size: 14px; color: var(--ink-soft);
+}
+.answer-meta b { color: var(--ink); font-weight: 800; }
+.answer-quip {
+  margin-top: 14px; font-size: 14px; background: rgba(255, 107, 107, .08);
+  border: 1px solid rgba(255, 107, 107, .18); color: var(--ink);
+  padding: 12px 14px; border-radius: 14px;
+}
+
+.waiting {
+  text-align: center; padding: 26px 10px 10px;
+}
+.waiting .big { font-size: 46px; line-height: 1; margin-bottom: 12px; }
+.waiting h3 { font-size: 19px; margin-bottom: 8px; }
+.waiting p { color: var(--ink-soft); font-size: 14.5px; max-width: 40ch; margin: 0 auto 18px; }
+.waiting .hint { font-size: 12.5px; margin-top: 14px; max-width: 44ch; }
+
+.cab-links { display: grid; gap: 14px; }
+.cab-link { display: grid; gap: 6px; }
+.cab-link .lbl { margin-bottom: 0; }
+.cab-link .copyrow { margin-top: 2px; }
+.cab-actions { display: grid; gap: 10px; margin-top: 6px; }
+.cab-actions .btn { width: 100%; }
+.cab-divider { height: 1px; background: var(--line); margin: 6px 0; }
+
+.cab-note {
+  font-size: 13px; color: var(--ink-soft); background: var(--cream-2);
+  border-radius: 14px; padding: 12px 14px; line-height: 1.5;
+}
+.cab-note b { color: var(--ink); }
+
+/* список приглашений */
+.inv-list { display: grid; gap: 14px; }
+.inv-item {
+  display: grid; grid-template-columns: 74px minmax(0, 1fr) auto; gap: 18px; align-items: center;
+  padding: 16px 20px 16px 16px; text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.inv-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.inv-thumb {
+  width: 74px; height: 74px; border-radius: 20px; display: grid; place-items: center;
+  font-size: 30px; color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+}
+.inv-body { min-width: 0; }
+.inv-body h3 { font-size: 17px; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.inv-body p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+.inv-state { font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 100px; white-space: nowrap; }
+.inv-state.done { background: rgba(47,163,107,.12); color: var(--ok); }
+.inv-state.wait { background: rgba(217,128,40,.12); color: var(--warn); }
+@media (max-width: 560px) {
+  .inv-item { grid-template-columns: 56px minmax(0, 1fr); gap: 12px; }
+  .inv-thumb { width: 56px; height: 56px; border-radius: 16px; font-size: 24px; }
+  .inv-state { grid-column: 2; justify-self: start; }
+}
+
+.cab-empty { text-align: center; padding: 54px 20px; }
+.cab-empty .big { font-size: 52px; margin-bottom: 14px; }
+.cab-empty h2 { font-size: 24px; margin-bottom: 10px; }
+.cab-empty p { color: var(--ink-soft); max-width: 38ch; margin: 0 auto 22px; }
+
+.cab-paste { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.cab-paste input {
+  flex: 1; min-width: 220px; border: 1.5px solid var(--line); border-radius: 14px;
+  padding: 12px 14px; background: #fff; outline: none; font-size: 14px;
+}
+.cab-paste input:focus { border-color: var(--coral); box-shadow: 0 0 0 4px rgba(255,107,107,.12); }
+
+.cab-tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.cab-tab {
+  border: 1.5px solid var(--line); background: #fff; border-radius: 100px;
+  padding: 9px 18px; font-weight: 700; font-size: 14px; color: var(--ink-soft); cursor: pointer;
+}
+.cab-tab[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.answer-history { margin-top: 16px; display: grid; gap: 10px; }
+.answer-history details { background: var(--cream-2); border-radius: 14px; padding: 10px 14px; font-size: 14px; }
+.answer-history summary { cursor: pointer; font-weight: 700; }
+
+@media (max-width: 560px) {
+  .cab-main { padding: 20px 0 50px; }
+  .cab-hero { padding: 24px 20px; border-radius: 24px; }
+  .cab-card { padding: 22px 18px; }
+}

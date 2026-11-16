@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /i.html
+Disallow: /cabinet.html
+Disallow: /create.html
+
+# Приглашения и кабинет — личные страницы, индексация не нужна.
