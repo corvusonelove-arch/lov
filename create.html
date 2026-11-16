@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Создать приглашение — invitik</title>
+  <meta name="description" content="Соберите личное приглашение на свидание: вайб, вступление, вопрос, дата, занятие и финальный экран.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/invite.css">
+  <link rel="stylesheet" href="css/create.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img class="logo-mark" src="assets/logo.svg" alt="">
+        <span class="logo-word">invitik</span>
+        <span class="logo-tag">личная версия</span>
+      </a>
+      <nav class="nav">
+        <a class="link-plain" href="cabinet.html">Кабинет</a>
+        <a class="link-plain" href="ideas.html">Идеи</a>
+        <a class="btn sm ghost" href="cabinet.html">← В кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap cz-main">
+    <div class="cz-intro">
+      <div>
+        <span class="eyebrow">конструктор</span>
+        <h1>Соберите приглашение</h1>
+        <p class="muted">Всё видно в живом превью справа. Ни регистрации, ни оплаты — в конце получите две ссылки.</p>
+      </div>
+      <div class="cz-intro-note">
+        <span class="cz-dot"></span>
+        <span>Черновик сохраняется в этом браузере</span>
+      </div>
+    </div>
+
+    <div class="cz-tabs" id="czTabs" role="tablist" aria-label="Шаги конструктора">
+      <button type="button" data-step="0" role="tab" aria-current="true"><b>1</b><span>Открытка</span></button>
+      <button type="button" data-step="1" role="tab"><b>2</b><span>Подтверждение</span></button>
+      <button type="button" data-step="2" role="tab"><b>3</b><span>Дата и время</span></button>
+      <button type="button" data-step="3" role="tab"><b>4</b><span>Занятие</span></button>
+      <button type="button" data-step="4" role="tab"><b>5</b><span>Финал</span></button>
+    </div>
+
+    <div class="cz-grid">
+      <div class="card cz-panel">
+        <div class="wstep" data-step="0">
+          <h2>Экран 1 — приглашение 💌</h2>
+          <p class="muted mb">То, что человек увидит, открыв ссылку.</p>
+
+          <div class="subhead">🌈 Вайб</div>
+          <p class="hint" style="margin-top:-6px">У каждого вайба свой живой фон: лепестки, звёзды, боке, северное сияние.</p>
+          <div class="vibe-grid" id="vibeGrid"></div>
+          <p class="hint" id="vibeName"></p>
+
+          <div class="subhead">🎀 Как откроется</div>
+          <p class="hint" style="margin-top:-6px">Маленький сюрприз перед первым экраном. Попробуйте в превью.</p>
+          <div class="opening-grid" id="openingGrid"></div>
+
+          <div id="openingCopy">
+            <label class="field"><span class="lbl">Заголовок вступления</span>
+              <textarea class="input" id="openingTitle" rows="2" maxlength="160"></textarea></label>
+            <label class="field"><span class="lbl">Подсказка к жесту</span>
+              <input class="input" id="openingHint" maxlength="200"></label>
+          </div>
+
+          <div id="scheduledBox" hidden>
+            <div class="row2">
+              <label class="field"><span class="lbl">Дата открытия</span><input class="input" id="openDate" type="date"></label>
+              <label class="field"><span class="lbl">Время</span><input class="input" id="openTime" type="time"></label>
+            </div>
+            <p class="hint">Гость увидит отсчёт, а когда время придёт — кнопку «Открыть приглашение».</p>
+          </div>
+
+          <div class="subhead">🎵 Музыка</div>
+          <p class="hint" style="margin-top:-6px">Зазвучит, когда гость нажмёт «Да».</p>
+          <div class="seg" id="musicSeg">
+            <button type="button" class="chip" data-m="none">Без музыки</button>
+            <button type="button" class="chip" data-m="melody">Тихая мелодия</button>
+            <button type="button" class="chip" data-m="url">Своя ссылка</button>
+          </div>
+          <input class="input" id="musicUrl" placeholder="https://…/track.mp3" hidden aria-label="Ссылка на трек">
+
+          <div class="subhead">🖼️ Открытка</div>
+          <div class="imgpick" data-key="image1"></div>
+
+          <label class="field"><span class="lbl">Вопрос</span>
+            <textarea class="input" id="question" rows="2" maxlength="280" placeholder="Пойдёшь со мной на свидание? 💌"></textarea></label>
+          <div class="row2">
+            <label class="field"><span class="lbl">Кнопка «Да»</span><input class="input" id="yesText" maxlength="40"></label>
+            <label class="field"><span class="lbl">Кнопка «Нет»</span><input class="input" id="noText" maxlength="40"></label>
+          </div>
+          <span class="lbl">Анимация «Да»</span>
+          <div class="seg" id="yesAnimSeg">
+            <button type="button" class="chip" data-a="hearts">Взрыв сердец 💥</button>
+            <button type="button" class="chip" data-a="none">Без анимации</button>
+          </div>
+          <span class="lbl">Кнопка «Нет» ведёт себя как…</span>
+          <div class="seg" id="noAnimSeg">
+            <button type="button" class="chip" data-a="runaway">Убегает 🏃</button>
+            <button type="button" class="chip" data-a="shrink">Уменьшается 🔎</button>
+            <button type="button" class="chip" data-a="multiply">Размножается 👯</button>
+            <button type="button" class="chip" data-a="kiss">Исчезает с 😘</button>
+          </div>
+        </div>
+
+        <div class="wstep" data-step="1" hidden>
+          <h2>Экран 2 — подтверждение 😍</h2>
+          <p class="muted mb">Дразнящий экран сразу после «Да».</p>
+          <label class="field"><span class="lbl">Заголовок</span>
+            <textarea class="input" id="confirmTitle" rows="2" maxlength="280"></textarea></label>
+          <label class="field"><span class="lbl">Вторая строка (необязательно)</span>
+            <input class="input" id="confirmSub" maxlength="200"></label>
+          <label class="field"><span class="lbl">Кнопка подтверждения</span>
+            <input class="input" id="confirmBtn" maxlength="40"></label>
+          <span class="lbl">Открытка экрана</span>
+          <div class="imgpick" data-key="image2"></div>
+        </div>
+
+        <div class="wstep" data-step="2" hidden>
+          <h2>Дата и время 📅</h2>
+          <p class="muted mb">Предложите варианты или оставьте выбор получателю.</p>
+          <div class="mode-grid" id="dateMode">
+            <button type="button" class="mode-card" data-mode="recipient">
+              <span class="mode-ico">♡</span>
+              <strong>Довериться получателю</strong>
+              <small>Он сам выберет дату и время</small>
+            </button>
+            <button type="button" class="mode-card" data-mode="suggested">
+              <span class="mode-ico">🗓</span>
+              <strong>Предложить варианты</strong>
+              <small>Одно время или несколько на выбор</small>
+            </button>
+          </div>
+
+          <div id="dateOptionsEditor" hidden>
+            <div class="lbl-row"><span class="lbl">Варианты встречи</span><span class="muted small" id="dateCount"></span></div>
+            <div id="dateOptionsList" class="date-list"></div>
+            <button class="btn ghost sm" type="button" id="addDate">+ Добавить вариант</button>
+            <p class="hint" style="margin-top:10px">Если планы не совпадут, получатель сможет выбрать своё время.</p>
+          </div>
+
+          <label class="field"><span class="lbl">Заголовок экрана</span>
+            <input class="input" id="dateTitle" maxlength="120"></label>
+          <label class="field"><span class="lbl">Текст кнопки</span>
+            <input class="input" id="dateBtn" maxlength="40"></label>
+          <span class="lbl">Открытка экрана</span>
+          <div class="imgpick" data-key="imageDate"></div>
+        </div>
+
+        <div class="wstep" data-step="3" hidden>
+          <h2>Занятие 🎯</h2>
+          <p class="muted mb">Чем займёмся? Получатель выберет один вариант. От 1 до 6.</p>
+          <label class="field"><span class="lbl">Заголовок экрана</span>
+            <input class="input" id="actTitle" maxlength="120"></label>
+          <label class="field"><span class="lbl">Подзаголовок (необязательно)</span>
+            <input class="input" id="actSub" maxlength="160"></label>
+
+          <details class="presets" id="presets">
+            <summary><span>✨ Готовые идеи</span><span class="presets-chev">▾</span></summary>
+            <div class="presets-body">
+              <div class="preset-cats" id="presetCats"></div>
+              <div class="preset-list" id="presetList"></div>
+            </div>
+          </details>
+
+          <div class="lbl-row"><span class="lbl">Ваши варианты</span><span class="muted small" id="actCount"></span></div>
+          <div id="actList" class="act-editor"></div>
+          <button class="btn ghost sm" type="button" id="addAct">+ Свой вариант</button>
+          <span class="status" id="actStatus" role="status"></span>
+
+          <span class="lbl" style="margin-top:20px">Открытка экрана</span>
+          <div class="imgpick" data-key="imageAct"></div>
+        </div>
+
+        <div class="wstep" data-step="4" hidden>
+          <h2>Финальный экран 🎉</h2>
+          <p class="muted mb">Его получатель увидит, когда выберет дату, время и занятие.</p>
+          <label class="field"><span class="lbl">Заголовок</span>
+            <textarea class="input" id="finalTitle" rows="2" maxlength="200"></textarea></label>
+          <label class="field"><span class="lbl">Описание</span>
+            <textarea class="input" id="finalDesc" rows="3" maxlength="400"></textarea></label>
+          <p class="hint" id="finalDescHint">Слова в скобках заменятся на выбор гостя. Вставьте их кнопками:</p>
+          <div class="varchips">
+            <button type="button" class="varchip" data-var="{Дата}">Дата</button>
+            <button type="button" class="varchip" data-var="{День}">День недели</button>
+            <button type="button" class="varchip" data-var="{Время}">Время</button>
+            <button type="button" class="varchip" data-var="{Занятие}">Занятие</button>
+          </div>
+
+          <span class="lbl" style="margin-top:16px">Открытка финала</span>
+          <div class="imgpick" data-key="imageFinal"></div>
+
+          <div class="subhead">📸 Альбом «наши моменты»</div>
+          <p class="hint" style="margin-top:-6px">Несколько фото по ссылкам — гость пролистает их на финале. Ссылки короткие и не раздувают приглашение.</p>
+          <div id="albumList" class="album-editor"></div>
+          <button class="btn ghost sm" type="button" id="addAlbum">+ Добавить фото</button>
+
+          <div class="subhead">🎁 Секретное послание</div>
+          <p class="hint" style="margin-top:-6px">Спрятанный конверт на финальном экране.</p>
+          <label class="field"><span class="lbl">Текст (необязательно)</span>
+            <textarea class="input" id="secretMsg" rows="3" maxlength="600" placeholder="P.S. Я влюбился в тебя ещё в тот день, когда…"></textarea></label>
+        </div>
+
+        <div class="cz-nav">
+          <button class="btn ghost" type="button" id="backBtn" hidden>← Назад</button>
+          <span class="cz-progress" id="progressLabel">Шаг 1 из 5</span>
+          <button class="btn" type="button" id="nextBtn">Далее →</button>
+          <button class="btn" type="button" id="publishBtn" hidden>Создать приглашение 💌</button>
+        </div>
+      </div>
+
+      <aside class="cz-preview">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="phone-screen"><div id="preview"></div></div>
+        </div>
+        <p class="cz-caption">Так увидит получатель</p>
+        <div class="cz-preview-actions">
+          <button class="btn ghost sm" type="button" id="togglePreview">Свернуть превью</button>
+          <button class="btn ghost sm" type="button" id="tryOpening">Попробовать вступление</button>
+          <button class="btn ghost sm" type="button" id="resetPreview">Сначала</button>
+        </div>
+        <p class="cz-size" id="sizeNote"></p>
+      </aside>
+    </div>
+  </main>
+
+  <div class="modal" id="doneModal" hidden>
+    <div class="modal-card">
+      <div class="done-emoji">🎉</div>
+      <h2>Приглашение готово</h2>
+      <p class="muted" id="doneIntro">Отправьте первую ссылку тому, кого приглашаете. Вторая — ваша: по ней вы увидите ответ.</p>
+
+      <div class="done-block">
+        <span class="lbl">Ссылка для гостя</span>
+        <div class="copyrow"><input readonly id="guestLink" aria-label="Ссылка для гостя"><button class="btn sm" type="button" data-copy="guestLink">Копировать</button></div>
+        <div class="done-share">
+          <a class="btn ghost sm" id="shareTg" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn ghost sm" id="shareWa" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost sm" id="openGuest" target="_blank" rel="noopener">Открыть</a>
+        </div>
+        <p class="hint" id="lengthHint"></p>
+      </div>
+
+      <div class="done-block">
+        <span class="lbl">Ваш кабинет</span>
+        <div class="copyrow"><input readonly id="cabLink" aria-label="Ссылка на кабинет"><button class="btn sm" type="button" data-copy="cabLink">Копировать</button></div>
+        <p class="hint">Сохраните ссылку: по ней вы вернётесь к ответу с любого устройства.</p>
+      </div>
+
+      <a class="btn block" id="goCabinet" href="cabinet.html">Открыть кабинет</a>
+      <button class="btn ghost block" type="button" id="newInvite" style="margin-top:8px">Собрать ещё одно</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/codec.js"></script>
+  <script src="js/vibes.js"></script>
+  <script src="js/answer.js"></script>
+  <script src="js/opening.js"></script>
+  <script src="js/invite.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/stickers.js"></script>
+  <script src="js/create.js"></script>
+</body>
+</html>

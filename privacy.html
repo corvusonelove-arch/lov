@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приватность — invitik</title>
+  <meta name="description" content="Как устроена личная версия invitik: данные живут в ссылке и в вашем браузере, сервера и аккаунтов нет.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+    .doc { padding: 30px 0 40px; max-width: 780px; }
+    .doc h1 { font-size: clamp(30px, 4.4vw, 46px); margin: 14px 0 14px; }
+    .doc h2 { font-size: clamp(22px, 3vw, 28px); margin: 40px 0 12px; }
+    .doc h3 { font-size: 18px; margin: 24px 0 8px; }
+    .doc p, .doc li { color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
+    .doc ul { padding-left: 20px; }
+    .doc li { margin-bottom: 8px; }
+    .doc b { color: var(--ink); }
+    .callout {
+      border-left: 3px solid var(--coral); background: rgba(255,107,107,.07);
+      border-radius: 0 16px 16px 0; padding: 16px 20px; margin: 22px 0;
+    }
+    .callout p { margin: 0; color: var(--ink); }
+    .privacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+    @media (max-width: 700px) { .privacy-grid { grid-template-columns: 1fr; } }
+    .privacy-card { padding: 22px; }
+    .privacy-card h3 { margin-top: 0; }
+    .privacy-card p { font-size: 14.5px; margin: 0; }
+    code {
+      background: var(--cream-2); border: 1px solid var(--line); border-radius: 6px;
+      padding: 1px 6px; font-size: .9em; font-family: ui-monospace, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img class="logo-mark" src="assets/logo.svg" alt="">
+        <span class="logo-word">invitik</span>
+        <span class="logo-tag">личная версия</span>
+      </a>
+      <nav class="nav">
+        <a class="link-plain" href="index.html">Главная</a>
+        <a class="link-plain" href="ideas.html">Идеи</a>
+        <a class="btn sm" href="create.html">Создать 💌</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap doc">
+    <span class="eyebrow">приватность</span>
+    <h1>Данные живут в ссылке, а не на сервере</h1>
+    <p>Это личная некоммерческая версия invitik. Здесь нет аккаунтов, базы данных и аналитики: приглашение целиком упаковано в ссылку, а список ваших приглашений хранится в браузере.</p>
+
+    <div class="callout">
+      <p><b>Коротко:</b> мы не собираем персональные данные, потому что нам их некуда собирать. Всё, что вы ввели, остаётся у вас и у того, кому вы отправили ссылку.</p>
+    </div>
+
+    <h2>Что происходит с приглашением</h2>
+    <p>Конструктор собирает ваши ответы в один JSON, сжимает его и кладёт в <code>#</code>-часть адреса:</p>
+    <p><code>i.html#d=zXZTNbtt…</code></p>
+    <p>Всё, что стоит после решётки, браузер <b>не отправляет</b> на сервер хостинга. Поэтому статический хостинг видит только запрос к файлу <code>i.html</code> — без текста вопроса, даты и имени. Такой же принцип используют клиентские редакторы и генераторы паролей.</p>
+
+    <div class="privacy-grid">
+      <div class="card privacy-card">
+        <h3>🔗 Ссылка</h3>
+        <p>Содержит всё приглашение. Кто получил ссылку — увидит приглашение. Не пересылайте её третьим лицам, если текст личный.</p>
+      </div>
+      <div class="card privacy-card">
+        <h3>💾 Браузер</h3>
+        <p>Список созданных приглашений и полученные ответы лежат в <code>localStorage</code> этого браузера. Это удобно, но не синхронизируется между устройствами.</p>
+      </div>
+      <div class="card privacy-card">
+        <h3>💌 Ответ</h3>
+        <p>Гость формирует ссылку с ответом и отправляет её вам сам. Пока вы её не открыли, ответ существует только у него.</p>
+      </div>
+      <div class="card privacy-card">
+        <h3>🧹 Удаление</h3>
+        <p>Удалите приглашение из списка в кабинете или очистите данные сайта в браузере. Ссылки при этом продолжат работать — они самодостаточны.</p>
+      </div>
+    </div>
+
+    <h2>Сторонние запросы</h2>
+    <p>Сайт статический, но для оформления подгружает шрифты и анимированные эмодзи:</p>
+    <ul>
+      <li><b>Google Fonts</b> (<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>) — шрифты Unbounded и Manrope.</li>
+      <li><b>Noto Emoji</b> (<code>fonts.gstatic.com</code>) — анимированные стикеры, CC BY 4.0.</li>
+    </ul>
+    <p>Эти сервисы получают стандартные данные запроса (IP, User-Agent), как и любой CDN. Если для вас это важно, положите шрифты и стикеры локально — код от этого не изменится, поменяются только адреса.</p>
+    <p>Никакой аналитики, пикселей и рекламных скриптов здесь нет.</p>
+
+    <h2>Необязательный релей</h2>
+    <p>По умолчанию ответ возвращается ссылкой: гость нажимает «Передать ответ» и отправляет её вам. Если хочется, чтобы ответ появлялся в кабинете сам, можно поднять крошечный релей (например, Cloudflare Worker, см. <code>worker/relay.js</code>) и указать его адрес в <code>js/config.js</code>. В этом случае ответ гостя будет храниться на <b>вашем</b> релее, а не у третьей стороны.</p>
+
+    <h2>Чего здесь нет</h2>
+    <ul>
+      <li>Регистрации, email, телефона и паролей.</li>
+      <li>Оплаты и подписок — это некоммерческий проект.</li>
+      <li>Куки для отслеживания и рекламных идентификаторов.</li>
+      <li>Серверной базы с вашими приглашениями.</li>
+    </ul>
+
+    <h2>Ограничения</h2>
+    <p>Ссылка — это и есть данные. Если её обрезать при копировании, приглашение не откроется. Если очистить браузер, пропадёт список приглашений, но не сами ссылки. Если включить релей, ответы будут доступны тому, кто знает адрес релея и ключ приглашения.</p>
+
+    <h2>О проекте</h2>
+    <p>Это учебная, некоммерческая реализация по мотивам <a class="link" href="https://invitik.ru" target="_blank" rel="noopener">invitik.ru</a>. Она не связана с оригинальным сервисом и не оказывает платных услуг. Анимированные эмодзи — Noto Emoji от Google, лицензия CC BY 4.0.</p>
+
+    <p style="margin-top:34px"><a class="btn" href="create.html">Создать приглашение 💌</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-bottom" style="margin-top:0;border-top:0">
+        <span>© Личная версия invitik · некоммерческий проект</span>
+        <span><a href="index.html">На главную</a> · <a href="ideas.html">Идеи</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

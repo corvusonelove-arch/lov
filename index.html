@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приглашение на свидание по ссылке — invitik</title>
+  <meta name="description" content="Соберите личное приглашение на свидание за пару минут: вопрос, живой фон, дата, занятие и финальный экран. Одна ссылка — и вы узнаете ответ.">
+  <meta name="theme-color" content="#FFF7F1">
+  <meta property="og:title" content="Приглашение на свидание по ссылке — invitik">
+  <meta property="og:description" content="Тёплое интерактивное приглашение: вопрос, «Да», календарь и план встречи в одной ссылке.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/invite.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img class="logo-mark" src="assets/logo.svg" alt="">
+        <span class="logo-word">invitik</span>
+        <span class="logo-tag">личная версия</span>
+      </a>
+      <nav class="nav">
+        <a class="link-plain" href="#how">Как это работает</a>
+        <a class="link-plain" href="#features">Возможности</a>
+        <a class="link-plain" href="ideas.html">Идеи</a>
+        <a class="link-plain" href="cabinet.html">Кабинет</a>
+        <a class="btn sm" href="create.html">Создать 💌</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="hero-badge"><img src="assets/logo.svg" alt=""> Некоммерческая версия · для двоих</span>
+          <h1>Пригласи на свидание так, чтобы это <span class="grad-text">запомнилось</span></h1>
+          <p class="lead">Соберите тёплое приглашение за пару минут и отправьте одну ссылку. Она или он откроет страницу, увидит ваш вопрос — и ответит прямо там. А вы узнаете ответ.</p>
+          <div class="hero-cta">
+            <a class="btn lg" href="create.html">Создать приглашение 💌</a>
+            <a class="btn ghost lg" href="#how">Как это работает</a>
+          </div>
+          <div class="hero-note">
+            <span>✓ <b>Без регистрации</b></span>
+            <span>✓ <b>Без оплаты</b></span>
+            <span>✓ <b>Работает в браузере</b></span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-phone-wrap">
+            <span class="float-emoji e1" aria-hidden="true">💌</span>
+            <span class="float-emoji e2" aria-hidden="true">✨</span>
+            <span class="float-emoji e3" aria-hidden="true">💕</span>
+            <div class="phone">
+              <div class="notch"></div>
+              <div class="phone-screen"><div id="heroDemo"></div></div>
+            </div>
+          </div>
+          <div class="demo-hint"><span class="pulse-dot"></span> Это живое приглашение — нажмите «Да»</div>
+          <button class="demo-reset" type="button" id="demoReset">Пройти заново</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Три шага до «Да»</h2>
+          <p>Никаких регистраций и сложностей — только вы и человек, которого хочется позвать.</p>
+        </div>
+        <div class="steps">
+          <div class="card step">
+            <div class="num">1</div>
+            <h3>Соберите приглашение</h3>
+            <p>Вопрос, стикер, вайб, варианты даты и занятия. Всё видно в живом превью.</p>
+          </div>
+          <div class="card step">
+            <div class="num">2</div>
+            <h3>Отправьте ссылку</h3>
+            <p>Получатель открывает страницу, говорит «Да» и сам выбирает день, время и занятие.</p>
+          </div>
+          <div class="card step">
+            <div class="num">3</div>
+            <h3>Узнайте ответ и план</h3>
+            <p>В кабинете видно согласие, выбранную дату, занятие и число попыток нажать «Нет».</p>
+          </div>
+        </div>
+        <div class="card fact-strip">
+          <div class="fact"><b>5 экранов</b><span>конструктора</span></div>
+          <div class="fact"><b>9 вайбов</b><span>живого фона</span></div>
+          <div class="fact"><b>5 вступлений</b><span>с жестом</span></div>
+          <div class="fact"><b>0 ₽</b><span>и без регистрации</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Мелочи, которые цепляют</h2>
+          <p>Не «красивая открытка», а маленькая история с продолжением.</p>
+        </div>
+        <div class="features">
+          <div class="card feature">
+            <div class="ico">🧩</div>
+            <h3>Конструктор из 5 шагов</h3>
+            <p>Открытка → подтверждение → дата → занятие → финал. Каждый экран настраивается.</p>
+          </div>
+          <div class="card feature">
+            <div class="ico">🌈</div>
+            <h3>Живые вайбы</h3>
+            <p>Лепестки, звёзды, боке, искры, северное сияние — фон двигается вместе с историей.</p>
+          </div>
+          <div class="card feature">
+            <div class="ico">🎀</div>
+            <h3>Вступление-жест</h3>
+            <p>Развязать ленту, согреть сердечко, стереть дымку или вытянуть записку.</p>
+          </div>
+          <div class="card feature">
+            <div class="ico">🏃</div>
+            <h3>Хитрая кнопка «Нет»</h3>
+            <p>Убегает, уменьшается, размножается или исчезает с поцелуем. А «Да» осыпает сердцами.</p>
+          </div>
+          <div class="card feature">
+            <div class="ico">📅</div>
+            <h3>Календарь у получателя</h3>
+            <p>Человек сам выбирает дату, время и занятие из ваших вариантов.</p>
+          </div>
+          <div class="card feature">
+            <div class="ico">🔔</div>
+            <h3>Кабинет с ответом</h3>
+            <p>Дата, время, занятие и попытки нажать «Нет». Плюс ссылки на всё это.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="free">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Всё бесплатно</h2>
+          <p>Это личный некоммерческий проект. Здесь нет оплаты, подписок и платных «активных ссылок».</p>
+        </div>
+        <div class="free-grid">
+          <div class="card free-card">
+            <span class="badge-free">черновик</span>
+            <div class="price">0 ₽</div>
+            <p class="muted small">Собрать и посмотреть</p>
+            <ul>
+              <li>Полный конструктор</li>
+              <li>Живое превью</li>
+              <li>Все оформления и вайбы</li>
+            </ul>
+            <a class="btn ghost block" href="create.html" style="margin-top:24px">Начать</a>
+          </div>
+          <div class="card free-card hot">
+            <span class="badge-free">ссылка</span>
+            <div class="price">0 ₽</div>
+            <p class="muted small">Отправить любимому человеку</p>
+            <ul>
+              <li>Рабочая ссылка на любом устройстве</li>
+              <li>Ответ в личном кабинете</li>
+              <li>Салют, музыка и детали встречи</li>
+              <li>Живёт столько, сколько нужно</li>
+            </ul>
+            <a class="btn block" href="create.html" style="margin-top:24px">Создать приглашение</a>
+          </div>
+          <div class="card free-card">
+            <span class="badge-free">кабинет</span>
+            <div class="price">0 ₽</div>
+            <p class="muted small">Ответ и детали</p>
+            <ul>
+              <li>Согласие и выбранный план</li>
+              <li>История приглашений</li>
+              <li>Ссылка на кабинет навсегда</li>
+            </ul>
+            <a class="btn ghost block" href="cabinet.html" style="margin-top:24px">Открыть кабинет</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>С чего начать</h2>
+          <p>Пара идей и готовых формулировок — если не хочется придумывать с нуля.</p>
+        </div>
+        <div class="idea-cards">
+          <a class="card idea-card" href="ideas.html#easy">
+            <span class="ic">🌿</span>
+            <h3>Легко и без давления</h3>
+            <p>Короткая встреча, понятное место и возможность выбрать другой день.</p>
+            <span class="go">Открыть идею →</span>
+          </a>
+          <a class="card idea-card" href="ideas.html#texts">
+            <span class="ic">✍️</span>
+            <h3>Готовые тексты</h3>
+            <p>Короткие, романтические, смешные и деликатные варианты приглашения.</p>
+            <span class="go">Выбрать текст →</span>
+          </a>
+          <a class="card idea-card" href="ideas.html#link">
+            <span class="ic">🔗</span>
+            <h3>Приглашение по ссылке</h3>
+            <p>Когда хочется превратить сообщение в маленькое событие.</p>
+            <span class="go">Как это устроено →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Коротко о главном</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Нужно ли регистрироваться?</summary>
+            <div class="faq-body">Нет. Вы собираете приглашение и сразу получаете две ссылки: одну — для того, кого приглашаете, вторую — личную, для себя.</div>
+          </details>
+          <details>
+            <summary>Как я узнаю ответ?</summary>
+            <div class="faq-body">Когда гость ответит, он нажмёт «Передать ответ» — и вам придёт ссылка. Откроете её — увидите дату, время, занятие и число попыток нажать «Нет». Если подключить необязательный релей, ответ появится в кабинете сам.</div>
+          </details>
+          <details>
+            <summary>А если человек нажмёт «Нет»?</summary>
+            <div class="faq-body">Вы сами выбираете характер кнопки: она убегает от курсора, уменьшается, размножается или исчезает с поцелуем. Настоящее «Нет» нажать почти невозможно 😉</div>
+          </details>
+          <details>
+            <summary>Где хранятся приглашение и ответ?</summary>
+            <div class="faq-body">В самой ссылке — сервера нет. Поэтому ссылку можно открыть с любого устройства, а данные не уходят на чужой сервер. Подробнее — на странице <a class="link" href="privacy.html">«Приватность»</a>.</div>
+          </details>
+          <details>
+            <summary>На чём открывается ссылка?</summary>
+            <div class="faq-body">На любом телефоне и компьютере в обычном браузере. Ничего устанавливать не нужно.</div>
+          </details>
+          <details>
+            <summary>А музыка и фото?</summary>
+            <div class="faq-body">Музыка включается, когда гость нажимает «Да»: можно выбрать встроенную тихую мелодию или свою ссылку на трек. Фото — стикером, ссылкой или загрузкой; загруженные картинки сжимаются, чтобы ссылка осталась короткой.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Пусть скажет «Да» 💛</h2>
+          <p>Соберите приглашение прямо сейчас — это правда пара минут.</p>
+          <a class="btn lg" href="create.html">Создать приглашение</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">
+            <img class="logo-mark" src="assets/logo.svg" alt="">
+            <span class="logo-word">invitik</span>
+          </a>
+          <p>Личная некоммерческая версия конструктора приглашений на свидание. Без регистрации, оплаты и серверов — всё работает в вашем браузере.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Приглашение</h4>
+            <a href="create.html">Создать</a>
+            <a href="i.html#demo=1">Посмотреть пример</a>
+            <a href="ideas.html">Идеи и тексты</a>
+          </div>
+          <div class="footer-col">
+            <h4>Проект</h4>
+            <a href="cabinet.html">Кабинет</a>
+            <a href="privacy.html">Приватность</a>
+            <a href="https://invitik.ru" target="_blank" rel="noopener">Оригинал invitik.ru</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Анимированные эмодзи — Noto Emoji от Google, CC BY 4.0.</span>
+        <span>Сделано для двоих · вдохновлено <a href="https://invitik.ru" target="_blank" rel="noopener">invitik.ru</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/vibes.js"></script>
+  <script src="js/answer.js"></script>
+  <script src="js/opening.js"></script>
+  <script src="js/invite.js"></script>
+  <script src="js/demo.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>

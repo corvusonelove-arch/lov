@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Идеи и тексты приглашений на свидание — invitik</title>
+  <meta name="description" content="Рабочие сценарии и готовые тексты приглашений на свидание: для знакомства, переписки и отношений. Выберите ситуацию — соберите приглашение.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+    .post { padding: 28px 0 0; }
+    .post h1 { font-size: clamp(30px, 4.6vw, 50px); margin: 14px 0 16px; }
+    .post .lead { font-size: 18px; color: var(--ink-soft); max-width: 60ch; }
+    .crumbs { font-size: 13px; color: var(--ink-soft); margin-bottom: 8px; }
+    .crumbs a { color: inherit; text-decoration: none; }
+    .crumbs a:hover { color: var(--coral); }
+    .context-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 820px) { .context-grid { grid-template-columns: 1fr; } }
+    .context { padding: 24px; }
+    .context .tag { display: inline-block; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--coral); margin-bottom: 10px; }
+    .context h3 { font-size: 18px; margin-bottom: 8px; }
+    .context p { color: var(--ink-soft); font-size: 14.5px; margin: 0; }
+    .formula {
+      display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 30px;
+      align-items: center; padding: 34px; border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,238,230,.9));
+      border: 1px solid rgba(255,255,255,.7); box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 820px) { .formula { grid-template-columns: 1fr; padding: 24px; } }
+    .formula blockquote {
+      margin: 0; font-size: 17px; line-height: 1.55; font-weight: 600;
+      border-left: 3px solid var(--coral); padding-left: 18px; color: var(--ink);
+    }
+    .text-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 820px) { .text-grid { grid-template-columns: 1fr; } }
+    .text-card { padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+    .text-card .kind { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
+    .text-card p { margin: 0; font-size: 15px; line-height: 1.5; flex: 1; }
+    .text-card .row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .text-card .row .btn { padding: 9px 14px; font-size: 13px; }
+    .scenario { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 820px) { .scenario { grid-template-columns: 1fr; } }
+    .scenario .card { padding: 24px; }
+    .scenario h3 { font-size: 18px; margin-bottom: 8px; }
+    .scenario p { color: var(--ink-soft); font-size: 14.5px; }
+    .anchor-target { scroll-margin-top: 90px; }
+    .prose { max-width: 68ch; }
+    .prose h2 { font-size: clamp(24px, 3.4vw, 34px); margin-bottom: 14px; }
+    .prose h3 { font-size: 19px; margin: 26px 0 8px; }
+    .prose p { color: var(--ink-soft); font-size: 16px; }
+    .prose ul { color: var(--ink-soft); font-size: 15.5px; padding-left: 20px; }
+    .prose li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img class="logo-mark" src="assets/logo.svg" alt="">
+        <span class="logo-word">invitik</span>
+        <span class="logo-tag">личная версия</span>
+      </a>
+      <nav class="nav">
+        <a class="link-plain" href="index.html">Главная</a>
+        <a class="link-plain" href="cabinet.html">Кабинет</a>
+        <a class="btn sm" href="create.html">Создать 💌</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap post">
+      <div class="crumbs"><a href="index.html">Главная</a> › <a href="ideas.html">Идеи</a></div>
+      <span class="eyebrow">библиотека</span>
+      <h1>Идеи красивых приглашений на свидание</h1>
+      <p class="lead">Хорошее приглашение не обязано быть идеальным. Оно должно быть личным, понятным и оставлять другому человеку свободу спокойно ответить.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+        <a class="btn" href="create.html">Создать приглашение 💌</a>
+        <a class="btn ghost" href="#texts">Готовые тексты</a>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head" style="text-align:left;margin-left:0;max-width:70ch">
+          <h2>Начните не с фразы, а с контекста</h2>
+          <p>Одно и то же сообщение звучит по-разному для человека, с которым вы познакомились вчера, и для партнёра, с которым вы вместе несколько лет. Перед отправкой ответьте себе на три вопроса: насколько близко вы общаетесь, есть ли уже взаимный интерес и насколько конкретным может быть предложение.</p>
+        </div>
+        <div class="context-grid">
+          <div class="card context">
+            <span class="tag">только познакомились</span>
+            <h3>Легко и без давления</h3>
+            <p>Короткая встреча, понятное место и возможность выбрать другой день. Чем меньше обязательств, тем проще сказать «да».</p>
+          </div>
+          <div class="card context">
+            <span class="tag">давно общаетесь</span>
+            <h3>Добавьте личную деталь</h3>
+            <p>Вспомните шутку, разговор или место, которое уже связывает вас. Одна отсылка делает приглашение вашим, а не шаблонным.</p>
+          </div>
+          <div class="card context">
+            <span class="tag">вы в отношениях</span>
+            <h3>Создайте маленький сюрприз</h3>
+            <p>Не скрывайте сам факт встречи, но сохраните интригу в программе вечера. Ссылка-приглашение тут работает лучше всего.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="formula">
+          <div>
+            <h2 style="font-size:clamp(24px,3.2vw,32px);margin-bottom:12px">Самая надёжная формула</h2>
+            <p class="muted">Тёплое обращение → конкретное предложение → выбор времени → лёгкий выход. Конкретика снимает неловкость: человеку не приходится угадывать, что вы имеете в виду. Свобода ответа делает приглашение уважительным.</p>
+          </div>
+          <div>
+            <blockquote>«Мне нравится с тобой общаться. Хочу позвать тебя на кофе в субботу — как тебе идея? Если день неудобный, можем выбрать другой.»</blockquote>
+            <button class="btn ghost sm" type="button" data-copy="Мне нравится с тобой общаться. Хочу позвать тебя на кофе в субботу — как тебе идея? Если день неудобный, можем выбрать другой." style="margin-top:14px">Скопировать текст</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block anchor-target" id="texts">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Готовые тексты</h2>
+          <p>Берите целиком или переделывайте под себя. Главное — не отправляйте то, что не звучит как вы.</p>
+        </div>
+        <div class="text-grid" id="textGrid">
+          <div class="card text-card">
+            <span class="kind">короткое</span>
+            <p>Привет! Есть планы на пятницу? Хочу украсть тебя на пару часов ☕</p>
+            <div class="row"><button class="btn ghost" data-copy="Привет! Есть планы на пятницу? Хочу украсть тебя на пару часов ☕">Скопировать</button><a class="btn" data-make="Привет! Есть планы на пятницу? Хочу украсть тебя на пару часов ☕" href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">романтическое</span>
+            <p>Я весь день думал, как это сказать. Давай встретимся? Мне хочется провести вечер с тобой, а не с телефоном.</p>
+            <div class="row"><button class="btn ghost" data-copy="Я весь день думал, как это сказать. Давай встретимся? Мне хочется провести вечер с тобой, а не с телефоном.">Скопировать</button><a class="btn" data-make="Я весь день думал, как это сказать. Давай встретимся? Мне хочется провести вечер с тобой, а не с телефоном." href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">смешное</span>
+            <p>Внимание, важное объявление: мне нужен спутник для поедания пиццы. Требования — ты. Согласна?</p>
+            <div class="row"><button class="btn ghost" data-copy="Внимание, важное объявление: мне нужен спутник для поедания пиццы. Требования — ты. Согласна?">Скопировать</button><a class="btn" data-make="Внимание, важное объявление: мне нужен спутник для поедания пиццы. Требования — ты. Согласна?" href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">деликатное</span>
+            <p>Если настроения нет — совершенно нормально. Но если захочется, я рядом и с удовольствием угощу тебя кофе.</p>
+            <div class="row"><button class="btn ghost" data-copy="Если настроения нет — совершенно нормально. Но если захочется, я рядом и с удовольствием угощу тебя кофе.">Скопировать</button><a class="btn" data-make="Если настроения нет — совершенно нормально. Но если захочется, я рядом и с удовольствием угощу тебя кофе." href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">по-дружески</span>
+            <p>Слушай, а давай выбраться куда-нибудь? Без плана и обязательств — просто увидеться и поболтать.</p>
+            <div class="row"><button class="btn ghost" data-copy="Слушай, а давай выбраться куда-нибудь? Без плана и обязательств — просто увидеться и поболтать.">Скопировать</button><a class="btn" data-make="Слушай, а давай выбраться куда-нибудь? Без плана и обязательств — просто увидеться и поболтать." href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">с интригой</span>
+            <p>У меня есть для тебя маленькое приглашение. Открывай ссылку — там всё.</p>
+            <div class="row"><button class="btn ghost" data-copy="У меня есть для тебя маленькое приглашение. Открывай ссылку — там всё.">Скопировать</button><a class="btn" data-make="У меня есть для тебя маленькое приглашение. Открывай ссылку — там всё." href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">прямое</span>
+            <p>Хочу позвать тебя именно на свидание. Ты мне нравишься, и я хочу провести с тобой время наедине.</p>
+            <div class="row"><button class="btn ghost" data-copy="Хочу позвать тебя именно на свидание. Ты мне нравишься, и я хочу провести с тобой время наедине.">Скопировать</button><a class="btn" data-make="Хочу позвать тебя именно на свидание. Ты мне нравишься, и я хочу провести с тобой время наедине." href="create.html">Собрать приглашение</a></div>
+          </div>
+          <div class="card text-card">
+            <span class="kind">тёплое</span>
+            <p>Мне нравится с тобой общаться. Хочу позвать тебя на кофе в субботу — как тебе идея? Если день неудобный, можем выбрать другой.</p>
+            <div class="row"><button class="btn ghost" data-copy="Мне нравится с тобой общаться. Хочу позвать тебя на кофе в субботу — как тебе идея? Если день неудобный, можем выбрать другой.">Скопировать</button><a class="btn" data-make="Мне нравится с тобой общаться. Хочу позвать тебя на кофе в субботу — как тебе идея? Если день неудобный, можем выбрать другой." href="create.html">Собрать приглашение</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block anchor-target" id="link">
+      <div class="wrap prose">
+        <h2>Почему приглашение по ссылке работает</h2>
+        <p>Ссылка переводит разговор в маленькое событие. Вместо сообщения, которое пролистают, человек получает страницу: с вашим вопросом, живым фоном и одним понятным действием. Ему не нужно отвечать сразу в переписке — можно открыть в удобный момент и спокойно выбрать.</p>
+        <h3>Что внутри ссылки</h3>
+        <ul>
+          <li><b>Ваш вопрос</b> — личный текст и оформление, а не открытка из каталога.</li>
+          <li><b>Дата и время</b> — вы предлагаете варианты или оставляете выбор.</li>
+          <li><b>План встречи</b> — занятие, которое человек выбирает сам.</li>
+          <li><b>Ответ у вас</b> — дата, время, занятие и число попыток нажать «Нет».</li>
+        </ul>
+        <p>Всё это — одна ссылка. Без регистрации и без приложения: открывается в обычном браузере на телефоне и компьютере.</p>
+        <div style="margin-top:22px"><a class="btn" href="create.html">Собрать своё приглашение</a></div>
+      </div>
+    </section>
+
+    <section class="block anchor-target" id="easy">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Выберите сценарий</h2>
+          <p>Три частые ситуации — и то, что в них стоит подчеркнуть.</p>
+        </div>
+        <div class="scenario">
+          <div class="card">
+            <h3>🌿 Легко и без давления</h3>
+            <p>Короткая встреча, понятное место, два варианта времени. Обязательно оставьте выход: «если неудобно — выберем другой день». Это снижает цену отказа и повышает шанс согласия.</p>
+          </div>
+          <div class="card">
+            <h3>✨ С личной деталью</h3>
+            <p>Упомяните то, что связывает только вас: место первой встречи, общую шутку, фильм, который обсуждали. Одна точная деталь важнее десяти комплиментов.</p>
+          </div>
+          <div class="card">
+            <h3>🎁 Маленький сюрприз</h3>
+            <p>Если вы уже вместе — спрячьте интригу в программе: неожиданное место, занятие, о котором человек давно говорил. Приглашение-ссылка отлично держит такую интригу.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head"><h2>Частые вопросы</h2></div>
+        <div class="faq">
+          <details><summary>Лучше приглашать лично или сообщением?</summary><div class="faq-body">Если вы часто видитесь и можете поговорить без посторонних, лично обычно теплее. Сообщение удобнее, когда человеку нужно время подумать или вы общаетесь преимущественно онлайн.</div></details>
+          <details><summary>Нужно ли сразу называть это свиданием?</summary><div class="faq-body">Если романтический интерес важен, ясность полезнее намёков. Можно сказать мягко: «Хочу позвать тебя именно на свидание».</div></details>
+          <details><summary>Сколько текста должно быть?</summary><div class="faq-body">Обычно достаточно двух–четырёх предложений. Длинное письмо уместно, если такой стиль уже привычен для ваших отношений.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>От текста к моменту</h2>
+          <p>Оформление, ваш вопрос, варианты даты и ответ — в одной аккуратной ссылке.</p>
+          <a class="btn lg" href="create.html">Создать бесплатно</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">
+            <img class="logo-mark" src="assets/logo.svg" alt="">
+            <span class="logo-word">invitik</span>
+          </a>
+          <p>Личная некоммерческая версия конструктора приглашений. Без регистрации, оплаты и серверов.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Приглашение</h4>
+            <a href="create.html">Создать</a>
+            <a href="i.html#demo=1">Посмотреть пример</a>
+            <a href="ideas.html#texts">Готовые тексты</a>
+          </div>
+          <div class="footer-col">
+            <h4>Проект</h4>
+            <a href="cabinet.html">Кабинет</a>
+            <a href="privacy.html">Приватность</a>
+            <a href="https://invitik.ru" target="_blank" rel="noopener">Оригинал invitik.ru</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Анимированные эмодзи — Noto Emoji от Google, CC BY 4.0.</span>
+        <span>Сделано для двоих · вдохновлено <a href="https://invitik.ru" target="_blank" rel="noopener">invitik.ru</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" style="position:fixed"></div>
+  <script>
+    (function () {
+      var toast = document.getElementById('toast');
+      var timer = 0;
+      function say(msg) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(timer);
+        timer = setTimeout(function () { toast.classList.remove('show'); }, 2200);
+      }
+      document.addEventListener('click', function (e) {
+        var c = e.target.closest('[data-copy]');
+        if (c) {
+          navigator.clipboard.writeText(c.dataset.copy).then(function () { say('Текст скопирован'); }, function () { say('Не получилось скопировать'); });
+          return;
+        }
+        var m = e.target.closest('[data-make]');
+        if (m) {
+          e.preventDefault();
+          location.href = 'create.html?q=' + encodeURIComponent(m.dataset.make);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

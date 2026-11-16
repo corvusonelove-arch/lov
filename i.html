@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Приглашение 💌</title>
+  <meta name="theme-color" content="#FF6B6B">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/invite.css">
+  <style>
+    body.guest {
+      margin: 0; display: grid; place-items: center; min-height: 100dvh;
+      background: #140e0c; overflow: hidden;
+    }
+    .guest-shell { position: relative; width: 100%; height: 100dvh; overflow: hidden; }
+    .guest-shell #app { position: absolute; inset: 0; }
+    @media (min-width: 640px) and (min-height: 720px) {
+      .guest-shell {
+        width: min(460px, 100vw); height: min(900px, 94dvh);
+        border-radius: 34px; box-shadow: 0 40px 120px rgba(0, 0, 0, .55);
+      }
+    }
+    .guest-loading {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px; color: #fff;
+      font-family: var(--font); font-size: 14px; background: #1b1210; z-index: 2;
+    }
+    .spinner {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.2); border-top-color: #FF8E7A;
+      animation: spin 800ms linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .guest-error {
+      position: absolute; inset: 0; display: grid; place-items: center; padding: 28px;
+      background: radial-gradient(900px 600px at 50% 0%, #FFE3D3, #FFF7F1 60%);
+      z-index: 3; color: var(--ink); text-align: center;
+    }
+    .guest-error h1 { font-size: 24px; margin: 12px 0 10px; }
+    .guest-error > div { max-width: 330px; }
+    .guest-error p { color: var(--ink-soft); font-size: 15px; margin-bottom: 22px; max-width: 34ch; }
+    .ge-emoji { font-size: 48px; }
+    .demo-badge {
+      position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); z-index: 9;
+      background: rgba(0,0,0,.35); color: #fff; text-decoration: none;
+      font-size: 11px; font-weight: 700; padding: 7px 12px; border-radius: 100px;
+      backdrop-filter: blur(6px); white-space: nowrap; border: 1px solid rgba(255,255,255,.2);
+    }
+  </style>
+</head>
+<body class="guest">
+  <div class="guest-shell">
+    <div id="app" hidden></div>
+
+    <div class="guest-loading" id="loading">
+      <span class="spinner"></span>
+      <p>Открываем приглашение…</p>
+    </div>
+
+    <div class="guest-error" id="error" hidden>
+      <div>
+        <div class="ge-emoji">💌</div>
+        <h1>Приглашение не открылось</h1>
+        <p data-msg>Похоже, ссылка обрезалась при отправке. Попросите прислать её ещё раз — целиком.</p>
+        <a class="btn" href="index.html">На главную</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/codec.js"></script>
+  <script src="js/vibes.js"></script>
+  <script src="js/answer.js"></script>
+  <script src="js/opening.js"></script>
+  <script src="js/invite.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/demo.js"></script>
+  <script src="js/page-invite.js"></script>
+</body>
+</html>
